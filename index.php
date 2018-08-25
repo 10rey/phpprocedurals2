@@ -112,25 +112,10 @@
 			}
 					
 			
-		} else {
-			# code...
 		}
-
 		// end of upgraded validation
-		
 
-
-		
-
-	} else {
-		
-		// isset
-
-	}
-	
-
-
-	
+	} 
 
 ?>
 
