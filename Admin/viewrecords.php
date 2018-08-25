@@ -23,8 +23,31 @@
 
 </script>
 
+<?php 
+	
+	if (empty($_GET["getUpdate"])) {
+
+?>
+
 <div id="retriever">
 
 	<?php include("retriever.php"); ?>
 
 </div>
+
+<?php 
+	
+	}else{
+
+		include("updating_user.php");
+
+	}
+
+
+	if (empty($_GET["notify"])) {
+		
+	}else{
+		echo "<font color=green><h3><center>" . $_GET["notify"] . "</center></h3></font>";
+	}
+
+?>
