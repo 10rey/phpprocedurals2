@@ -4,19 +4,23 @@
 <br>
 <center>
 
-	<table border="1" width="80%">
+	<table border="0" width="80%">
 
 		<tr>
 			
-			<td width="16%">Name</td>
-			<td width="16%">Gender</td>
-			<td width="16%">Contact</td>
-			<td width="16%">Email</td>
-			<td width="16%">Password</td>
-			<td width="16%" colspan="2">
-				<center>Action</center>
-			</td>
+			<th width="16%">Name</th>
+			<th width="10%">Gender</th>
+			<th width="10%">Contact</th>
+			<th width="16%">Email</th>
+			<th width="16%">Password</th>
+			<th width="16%" colspan="2">
+				Action
+			</th>
 
+		</tr>
+
+		<tr>
+			<td colspan="6"></td>
 		</tr>
 
 <?php 
@@ -44,6 +48,7 @@
 		$jScript = md5(rand(1,9));
 		$newScript = md5(rand(1,9));
 		$getUpdate = md5(rand(1,9));
+		$getDelete = md5(rand(1,9));
 
 		echo "
 
@@ -58,8 +63,8 @@
 					
 					<br>
 					<center>
-						<a href='?jScript=$jScript&&newScript=$newScript&&getUpdate=$getUpdate&&id_user=$id_user ' class='btn-update'>Update</a> |
-						<a href=''>Delete</a>
+						<a href='?jScript=$jScript&&newScript=$newScript&&getUpdate=$getUpdate&&id_user=$id_user ' class='btn-update'>Update</a>
+						<a href='?jScript=$jScript&&newScript=$newScript&&getDelete=$getDelete&&id_user=$id_user' class='btn-delete'>Delete</a>
 					</center>
 					<br>
 
@@ -68,6 +73,17 @@
 			</tr>
 
 		";
+
+		echo "
+			
+			<tr>
+				
+				<td colspan='6'> <hr> </td>
+				
+			</tr>
+
+		";
+
 
 	}
 
