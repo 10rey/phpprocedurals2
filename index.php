@@ -144,6 +144,8 @@
 
 </style>
 
+<?php include("nav.php"); ?>
+
 <form action="" method="POST">
 	
 	<center>
