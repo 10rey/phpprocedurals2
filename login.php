@@ -1,6 +1,31 @@
 <?php 
 
+	session_start();
+
 	include("nav.php");
+
+	if (isset($_SESSION["email"])) {
+
+		$email = $_SESSION["email"];
+
+		$query_account_type = mysqli_query($connection, "SELECT * FROM tbl_user  WHERE email='$email' ");
+
+		$get_account_type = mysqli_fetch_assoc($query_account_type);
+
+		$account_type = $get_account_type["account_type"];
+
+		if ($account_type == 1) {
+			
+			echo "<script>window.location.href='admin';</script>";
+
+		} else {
+			
+			echo "<script>window.location.href='user';</script>";
+
+		}
+		
+
+	}
 
 	date_default_timezone_set("Asia/Manila");
 	$date_now = date("m/d/Y");
@@ -45,6 +70,8 @@
 
 					if ($db_password == $password) {
 
+						$_SESSION["email"] = $email;
+
 						echo "<script>window.location.href='admin';</script>";
 
 					} else {
@@ -59,6 +86,8 @@
 					if ($db_log <= $new_time) {
 
 						if ($db_password == $password) {
+
+							$_SESSION["email"] = $email;
 
 							mysqli_query($connection, "UPDATE tbl_user SET attempt='0', log_time='' WHERE email='$email' ");
 
